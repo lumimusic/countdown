@@ -1,4 +1,12 @@
 /* Phong cách chung hiện có */
+/* Khai báo font chữ SVN-Hottroof Semhesta */
+@font-face {
+    font-family: 'SVN-Hottroof Semhesta';
+    src: url('SVN-Hottroof Semhesta.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -75,17 +83,17 @@ p {
 }
 
 .time-box .number {
-    font-size: 3rem; /* Kích thước số */
+    font-size: 4.5rem; /* Kích thước số */
     font-weight: bold;
     color: #333;
-    font-family: 'Pacifico', cursive; /* Font chữ kiểu viết tay */
+    font-family: 'SVN-Hottroof Semhesta', sans-serif;
 }
 
 .time-box .label {
     background-color: transparent;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: #333;
-    font-family: 'Pacifico', cursive;
+    font-family: 'SVN-Hottroof Semhesta', sans-serif;
     padding: 0;
 }
 
