@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trang web đếm ngược đến Tết Ất Tỵ 2025">
+    <meta property="og:title" content="Đếm Ngược Đến Tết Ất Tỵ 2025">
+    <meta property="og:description" content="Sắp Tết rồi! Xem thời gian đếm ngược từng giây đến Tết!">
+    <meta property="og:image" content="assets/img/logo.png">
+    <title>Đếm Ngược Đến Tết</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Đếm ngược</h1>
+            <h2>Tết Ất Tỵ 2025</h2>
+            <p>Sắp Tết rồi!!! Chỉ còn...</p>
+            <div class="dropdown-menus">
+                <select id="event-selector" onchange="switchCountdown()">
+                    <option value="tet" selected>Tết Nguyên Đán</option>
+                    <option value="new-year">Tết Dương Lịch</option>
+                    <option value="christmas">Giáng Sinh</option>
+                    <option value="mid-autumn">Trung Thu</option>
+                    <option value="valentine">Valentine</option>
+                    <option value="thpt-exam">Ngày thi THPT</option>
+                </select>
+            
+                <!-- Drop-down chọn nhạc -->
+                <div class="music-selector">
+                    <select id="music-menu" onchange="playMusic()">
+                        <option value="" disabled selected>Chọn bản nhạc</option>
+                        <option value="assets/music/chuyencuboqua.mp3">Chuyện Cũ Bỏ Qua</option>
+                        <option value="assets/music/longphungsumvay.mp3">Long Phụng Sum Vầy</option>
+                        <option value="assets/music/motnammoibinhan.mp3">Một Năm Mới Bình An</option>
+                        <option value="assets/music/tetdongday.mp3">Tết Đong Đầy</option>
+                        <option value="assets/music/tetdongday2.mp3">Tết Đong Đầy 2</option>
+                    </select>
+                </div>
+            </div>            
+        </header>
+
+        <div class="countdown">
+            <div class="time-box">
+                <div class="number" id="days">00</div>
+                <div class="label">Ngày</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="hours">00</div>
+                <div class="label">Giờ</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="minutes">00</div>
+                <div class="label">Phút</div>
+            </div>
+            <div class="time-box">
+                <div class="number" id="seconds">00</div>
+                <div class="label">Giây</div>
+            </div>
+        </div>
+        <!-- Phần thông tin về Tết -->
+        <div class="tet-info">
+            <h3>Tết Nguyên Đán - Tết truyền thống của người Việt</h3>
+            <div class="image-slider">
+                <img src="assets/img/ảnh 1.jpg" alt="Hình ảnh Tết 1" class="slider-image">
+                <img src="assets/img/ảnh 2.jpg" alt="Hình ảnh Tết 2" class="slider-image">
+                <img src="assets/img/ảnh 3.jpg" alt="Hình ảnh Tết 3" class="slider-image">
+                <img src="assets/img/ảnh 4.jpg" alt="Hình ảnh Tết 4" class="slider-image">
+                <img src="assets/img/ảnh 5.jpg" alt="Hình ảnh Tết 5" class="slider-image">
+            </div>            
+            <p>
+                Tết Nguyên Đán (còn gọi là Tết Cả, Tết Ta, Tết Âm lịch, Tết Cổ truyền, Tết Á Đông hay đơn giản là Tết) là dịp lễ đầu năm mới theo âm lịch của Việt Nam và các nước thuộc vùng văn hóa Á Đông như Trung Quốc, Đài Loan (gọi là Xuân Tiết), Hàn Quốc, Triều Tiên (gọi là Seollal) và Nhật Bản (gọi là Shōgatsu), Mông Cổ (gọi là Tsagaan Sar) và cộng đồng người theo văn hóa Á Đông ở hải ngoại cũng ăn Tết này.
+            </p>
+            <p>
+                Vì Tết tính theo Âm lịch nên Tết Nguyên Đán của Việt Nam muộn hơn Tết Dương lịch (hay Tết Tây). Do quy luật 3 năm nhuận một tháng của âm lịch nên ngày đầu năm của dịp Tết Nguyên Đán không bao giờ trước ngày 21 tháng 1 Dương lịch và sau ngày 20 tháng 2 Dương lịch mà rơi vào giữa những ngày này. Toàn bộ dịp Tết Nguyên Đán hàng năm thường kéo dài trong khoảng 7 đến 8 ngày cuối năm cũ và 7 ngày đầu năm mới (23 tháng Chạp đến hết ngày 7 tháng Giêng). Tại Việt Nam trước ngày Tết còn có phong tục như "cúng Táo Quân" (23 tháng Chạp Âm lịch) và "cúng Tất Niên" (29 hoặc 30 tháng Chạp Âm lịch).
+            </p>
+            <p>
+                Hàng năm, Tết được tổ chức vào ngày mồng 1 (hay mùng 1) tháng Giêng âm lịch trên toàn nước Việt Nam và ở một vài nước khác có cộng đồng người Việt sinh sống. Sắm cây đào và cây quất ở Bắc Bộ, Bắc Trung Bộ, hay cây mai và dưa hấu ở Nam Trung Bộ và Nam Bộ được coi là sự chuẩn bị không thể thiếu trong những ngày giáp Tết. Sau đó, trong những ngày Tết, các gia đình sum họp bên nhau, cùng thăm hỏi người thân, dành những lời chúc mừng, mừng tuổi và thờ cúng tổ tiên. Hoạt động tín ngưỡng thờ cúng tổ tiên luôn được diễn ra trong những ngày Tết, kết hợp với các món ăn truyền thống như: mứt, hạt dưa và bánh chưng, bánh tét, dưa hành, giò lụa, giò xào,... là những món ăn không thể thiếu trong ngày Tết của người Việt.
+            </p>
+        </div>
+
+        <!-- Phần lịch sử của Tết -->
+        <div class="tet-history">
+            <h3>Lịch sử của Tết Nguyên Đán</h3>
+            <p>
+                Văn hóa Đông Á – thuộc nền văn minh nông nghiệp lúa nước – do nhu cầu canh tác nông nghiệp đã "phân chia" thời gian trong một năm thành 24 tiết khí khác nhau (và ứng với mỗi tiết này có một thời khắc "giao thừa") trong đó tiết khí quan trọng nhất là tiết khởi đầu của một chu kỳ canh tác, gieo trồng, tức là Tiết Nguyên Đán. Sau này được biết đến là Tết Nguyên Đán. Năm mới của Việt Nam bị ảnh hưởng bởi nền văn minh lúa nước cổ đại.
+            </p>
+            <p>
+                Theo Đại Nam nhất thống chí nhà Nguyễn, ở các huyện Bất Bạt và Mỹ Lương (Xứ Đoài) hàng năm lấy tháng 11 làm đầu năm. Theo một số nhà nghiên cứu, vào thời Hùng Vương, Tết Nguyên Đán diễn ra vào tháng Tý (tháng 11 âm lịch) khi tiết trời chuẩn bị se lạnh. Do vậy, Tết Đoan ngọ vào ngày mùng 5 tháng 5 âm lịch rơi vào đúng giữa năm, tiết trời bắt đầu nắng nóng. Sau này, do ảnh hưởng từ Trung Quốc, người Việt chuyển sang ăn Tết tháng Dần (tháng 1 âm lịch). Tuy nhiên ở vùng đất Tổ như Sơn Tây, Phú Thọ, Vĩnh Phúc vẫn có những nơi ăn Tết hoặc kỷ niệm ngày đầu tháng 11 như: xông đất, mở cửa rừng, ăn những loại đất có khoáng chất vào người…
+            </p>
+            <p>
+                Người Việt đón Tết từ tháng giêng cho đến tháng 3 âm lịch, chơi nhiều trò chơi như đá bóng, đá cầu, đánh cờ, đấu vật và tổ chức tế lễ. Các lễ nghi quan trọng như lập Đàn phong vân để cầu mưa, lập đàn xã tắc để cầu cho quanh năm được mùa, dùng ngày lập xuân để làm lễ nghinh xuân.
+            </p>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 - Trang đếm ngược sự kiện (LUMI COUNTDOWN). Tất cả quyền được bảo lưu.</p>
+        <p>Liên hệ: <a href="mailto:lumicountdown25@gmail.com">lumicountdown25@gmail.com</a></p>
+    
+        <!-- Nút chia sẻ -->
+        <div class="social-icons">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://lumicountdown.github.io/countdown" target="_blank" class="facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://twitter.com/intent/tweet?url=https://https://lumicountdown.github.io/countdown&text=Check%20out%20this%20awesome%20website!" target="_blank" class="twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://https://lumicountdown.github.io/countdown" target="_blank" class="linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="mailto:?subject=Check%20out%20this%20website!&body=Check%20out%20this%20awesome%20website%20at%20https://lumicountdown.github.io/countdown" class="email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    
+        <!-- Logo Tết 2025 đã di chuyển xuống dưới -->
+        <img src="assets/img/logo.png" alt="Logo Tết 2025" class="logo">
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
